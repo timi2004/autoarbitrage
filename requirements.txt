@@ -1,0 +1,20 @@
+# Data validation and modeling
+pydantic
+
+# HTTP requests and web utilities
+requests
+dotenv
+
+# Browser automation
+browser-use
+playwright
+
+# AI/LLM integrations  
+langchain-anthropic
+langchain-openai
+
+# Currency conversion
+CurrencyConverter
+
+# Async utilities
+nest-asyncio
