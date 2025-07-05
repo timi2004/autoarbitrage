@@ -1,0 +1,76 @@
+{
+  "executables": {
+    "path1": {
+      "executable_path": "",
+      "user_data_dir": ""
+    },
+    "path2": {
+      "executable_path": "",
+      "user_data_dir": ""
+    }
+  },
+  "bookmakers": {
+    "sportybet": {
+      "id": 43,
+      "enabled": false,
+      "username": "",
+      "password": "",
+      "url": "https://sportybet.com"
+    },
+    "leon": {
+      "id": 8,
+      "enabled": false,
+      "username": "",
+      "password": "",
+      "url": "https://leon.bet"
+    },
+    "marathonbet": {
+      "id": 5,
+      "enabled": false,
+      "username": "",
+      "password": "",
+      "url": "https://marathonbet.com"
+    },
+    "zenitbet": {
+      "id": 4,
+      "enabled": false,
+      "username": "",
+      "password": "",
+      "url": "https://zenitbet.com"
+    },
+    "vbet": {
+      "id": 19,
+      "enabled": false,
+      "username": "",
+      "password": "",
+      "url": "https://vbet.com"
+    },
+    "sports888": {
+      "id": 82,
+      "enabled": false,
+      "username": "",
+      "password": "",
+      "url": "https://888sport.com"
+    },
+    "bet9ja": {
+      "id": 33,
+      "enabled": false,
+      "username": "",
+      "password": "",
+      "url": "https://www.bet9ja.com"
+    },
+    "nairabet": {
+      "id": 38,
+      "enabled": false,
+      "username": "",
+      "password": "",
+      "url": "https://www.nairabet.com"
+    }
+  },
+  "scraper_settings": {
+    "max_opportunities": 50,
+    "timeout_seconds": 3600,
+    "retry_attempts": 5,
+    "delay_between_requests": 30
+  }
+}
