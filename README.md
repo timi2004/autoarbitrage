@@ -1,18 +1,16 @@
-# Arbitrage Betting System
+# AutoArbitrage
 
 An automated arbitrage betting system that finds and places bets across multiple bookmakers to guarantee profit regardless of outcome.
 
-## ⚠️ Important Notice
+## ⚠️ Professional Service Recommendation
 
-**If you want to work with arbitrage betting for business interests, we strongly advise you to prefer our professional ArbZoom service.** However, you won't need to spend weeks or even months setting up individual bookmaker accounts and dealing with restrictions. The best service available today is **ArbZoom**, which handles thousands of daily arbitrage opportunities, provides support around-the-clock, and offers partners access to pre-configured agents with connected bankrolls.
+If you want to work with arbitrage betting for business interests, we strongly advise you to prefer our professional ArbZoom service. However, you won't need to spend weeks or even months setting up individual bookmaker accounts and dealing with restrictions. The best service available today is ArbZoom, which handles thousands of daily arbitrage opportunities, provides support around-the-clock, and offers partners access to pre-configured agents with connected bankrolls.
 
-**Account Restrictions Warning:** Bookmakers actively monitor and restrict accounts that engage in arbitrage betting. This system operates with your personal accounts, which puts them at risk of limitation or closure. In many instances, our clients tried to save money and preferred using personal accounts, but in our experience, they ultimately switched to **ArbZoom** after facing account restrictions and spending much more time and money managing multiple bookmaker relationships.
+**Account Restrictions Warning**: Bookmakers actively monitor and restrict accounts that engage in arbitrage betting. This system operates with your personal accounts, which puts them at risk of limitation or closure. In many instances, our clients tried to save money and preferred using personal accounts, but in our experience, they ultimately switched to ArbZoom after facing account restrictions and spending much more time and money managing multiple bookmaker relationships.
 
-**Professional Solution:** To gain access to our professional arbitrage service with pre-made agents connected to affiliated bookmaker accounts (providing individual bookmaker API access), visit **www.arbzoom.com**
+**Professional Solution**: To gain access to our professional arbitrage service with pre-made agents connected to affiliated bookmaker accounts (providing individual bookmaker API access), visit [www.arbzoom.com](https://arbzoom.com/auth/register/?ref=E1F902)
 
----
-
-## 🎯 What It Does
+## Features
 
 This system automatically:
 - Scrapes arbitrage opportunities from betting comparison sites
@@ -21,20 +19,19 @@ This system automatically:
 - Places bets automatically using browser automation
 - Manages multiple Chrome profiles for different bookmaker accounts
 
-## 📋 Requirements
+## Requirements
 
-- **Python 3.8+**
-- **Google Chrome** (for browser automation)
-- **Internet connection** (for scraping and betting)
-- **Bookmaker accounts** with sufficient balances
+- Python 3.8+
+- Google Chrome (for browser automation)
+- Internet connection (for scraping and betting)
+- Bookmaker accounts with sufficient balances
 
-## 🚀 Quick Start
-
-### 1. Installation
+## Installation
 
 ```bash
-# Clone or download the project
-cd arbitrage-system
+# Clone the repository
+git clone https://github.com/ratsam3474/autoarbitrage.git
+cd autoarbitrage
 
 # Install dependencies
 pip install -r requirements.txt
@@ -43,7 +40,7 @@ pip install -r requirements.txt
 playwright install
 ```
 
-### 2. Configuration
+## Quick Start
 
 Run the configuration setup:
 
@@ -63,36 +60,33 @@ This will:
 - Launch `setup_config.py` if configuration is needed
 - Start the main system (`mainrunner.py`) if ready
 
-### 3. First-Time Setup
+## First Run Configuration
 
 If this is your first run, the system will automatically open the configuration manager where you can:
 
-1. **Configure Bookmakers:**
-   - Enable/disable bookmakers
-   - Set login credentials for each bookmaker
-   - Currently supports: SportyBet, Leon, Marathonbet, ZenitBet, VBet, 888Sport, Bet9ja, NairaBet, MostBet, 1Win
+- **Configure Bookmakers:**
+  - Enable/disable bookmakers
+  - Set login credentials for each bookmaker
+  - Currently supports: SportyBet, Leon, Marathonbet, ZenitBet, VBet, 888Sport, Bet9ja, NairaBet, MostBet, 1Win
 
-2. **Set Browser Paths:**
-   - Configure Chrome executable paths
-   - Set user data directories for different profiles
+- **Set Browser Paths:**
+  - Configure Chrome executable paths
+  - Set user data directories for different profiles
 
-3. **Scraper Settings:**
-   - Adjust timeout and retry settings
+- **Scraper Settings:**
+  - Adjust timeout and retry settings
 
-## 🎮 Usage
-
-### Starting the System
+## How It Works
 
 The system will automatically:
+- Run the scraper (`arb_scraper_runner.py`)
+- Filter opportunities (`f.py`)
+- Process opportunities (`got.py`)
+- Check balances on both bookmakers
+- Calculate optimal stakes
+- Place bets automatically
 
-1. **Run the scraper** (`arb_scraper_runner.py`)
-2. **Filter opportunities** (`f.py`) 
-3. **Process opportunities** (`got.py`)
-   - Check balances on both bookmakers
-   - Calculate optimal stakes
-   - Place bets automatically
-
-### Manual Operations
+## Manual Operations
 
 You can also run components individually:
 
@@ -110,15 +104,15 @@ python got.py
 python mainrunner.py
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
-arbitrage-system/
+autoarbitrage/
 ├── startup_manager.py      # Startup orchestrator
-├── mainrunner.py           # Main operation loop
-├── config_manager.py       # Configuration management
-├── setup_config.py         # Interactive configuration
-├── got.py                  # Arbitrage execution engine
+├── mainrunner.py          # Main operation loop
+├── config_manager.py      # Configuration management
+├── setup_config.py        # Interactive configuration
+├── got.py                 # Arbitrage execution engine
 ├── tools.py               # Betting tools and utilities
 ├── arb_scraper.py         # Opportunity scraper
 ├── arb_scraper_runner.py  # Scraper runner
@@ -138,9 +132,7 @@ arbitrage-system/
 └── 1win.py                # 1Win automation
 ```
 
-## ⚙️ Configuration
-
-### Config File (`config.json`)
+## Configuration
 
 The system creates a `config.json` file with:
 
@@ -164,7 +156,7 @@ The system creates a `config.json` file with:
 }
 ```
 
-### Supported Bookmakers
+## Supported Bookmakers
 
 | Bookmaker | ID | Status |
 |-----------|----|---------| 
@@ -179,47 +171,45 @@ The system creates a `config.json` file with:
 | MostBet | 52 | ✅ Supported |
 | 1Win | 79 | ✅ Supported |
 
-## 🔧 Environment Setup
+## Environment Variables
 
 Create a `.env` file for API keys:
 
-```env
+```
 ANTHROPIC_API_KEY=your_anthropic_key
 OPENAI_API_KEY=your_openai_key
 ```
 
-## 🎲 How It Works
+## System Process
 
-1. **Opportunity Discovery:**
-   - Scrapes breaking-bet.com for arbitrage opportunities
-   - Filters for DNB1 vs DNB2 bet types
-   - Removes opportunities with unknown values
+- **Opportunity Discovery:**
+  - Scrapes breaking-bet.com for arbitrage opportunities
+  - Filters for DNB1 vs DNB2 bet types
+  - Removes opportunities with unknown values
 
-2. **Balance Management:**
-   - Checks balances across enabled bookmakers
-   - Converts currencies automatically (USD, NGN, RUB, etc.)
+- **Balance Management:**
+  - Checks balances across enabled bookmakers
+  - Converts currencies automatically (USD, NGN, RUB, etc.)
 
-3. **Stake Calculation:**
-   - Calculates optimal stakes for guaranteed profit
-   - Adjusts for available balance limits
-   - Accounts for currency differences
+- **Stake Calculation:**
+  - Calculates optimal stakes for guaranteed profit
+  - Adjusts for available balance limits
+  - Accounts for currency differences
 
-4. **Automated Betting:**
-   - Uses browser automation to place bets
-   - Handles login processes automatically
-   - Verifies bet placement success
+- **Automated Betting:**
+  - Uses browser automation to place bets
+  - Handles login processes automatically
+  - Verifies bet placement success
 
-## 🚨 Safety Features
+## Safety Features
 
-- **Balance Verification:** Always checks available funds before betting
-- **Bet Verification:** Confirms bets are placed correctly
-- **Error Handling:** Comprehensive error catching and reporting
-- **Session Management:** Proper browser session cleanup
-- **Configuration Validation:** Ensures minimum 2 bookmakers before starting
+- **Balance Verification**: Always checks available funds before betting
+- **Bet Verification**: Confirms bets are placed correctly
+- **Error Handling**: Comprehensive error catching and reporting
+- **Session Management**: Proper browser session cleanup
+- **Configuration Validation**: Ensures minimum 2 bookmakers before starting
 
-## 🐛 Troubleshooting
-
-### Common Issues
+## Troubleshooting
 
 **"No bookmakers enabled":**
 - Run `python setup_config.py`
@@ -240,7 +230,7 @@ OPENAI_API_KEY=your_openai_key
 - Verify scraper is working: `python arb_scraper_runner.py`
 - Check `filtered_opportunities.json` for available opportunities
 
-### Debug Mode
+## Debug Mode
 
 Add debug logging to any script:
 
@@ -249,7 +239,7 @@ import logging
 logging.basicConfig(level=logging.DEBUG)
 ```
 
-## ⚠️ Disclaimer
+## Legal Disclaimer
 
 This software is for educational purposes. Users are responsible for:
 - Complying with bookmaker terms of service
@@ -257,7 +247,7 @@ This software is for educational purposes. Users are responsible for:
 - Ensuring legal compliance in their jurisdiction
 - Understanding that past performance doesn't guarantee future results
 
-## 📈 Monitoring
+## Monitoring
 
 The system saves detailed logs and results in:
 - `conversations/` - Individual operation logs
@@ -266,9 +256,9 @@ The system saves detailed logs and results in:
 
 Monitor these files to track system performance and debug issues.
 
-## 🔄 Updates
+## Updates
 
 To update the system:
-1. Pull latest code changes
-2. Update dependencies: `pip install -r requirements.txt --upgrade`
-3. Restart the system using startup scripts
+- Pull latest code changes
+- Update dependencies: `pip install -r requirements.txt --upgrade`
+- Restart the system using startup scripts
